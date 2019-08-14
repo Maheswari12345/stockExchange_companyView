@@ -1,4 +1,13 @@
-.header{
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+ import="java.util.*,com.example.stockspring.model.Ipo_planned"    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+ <style>
+ 
+ .header{
     background-color: 	#0044cc;
     width:100%;
     font-size: 50px;
@@ -82,9 +91,6 @@ padding-right:40px;
 }
 .buttonconfirm{
     padding: 12px 28px;
-    background-color:#33ccff;
-    text-decoration:none;
-    color:white;
 }
 .container-addcompany{
     margin-left:150px;
@@ -208,28 +214,80 @@ td{
     padding-left:500px;
 
 }
-.user-register{
-    padding-left:900px;
+  .bg{
+          background-color: white;
+      }
  
-}
-.user_register-button
-{
-    padding-top:120px;
-    text-align: center;
+ 
+ </style>
 
-}
-.login-container{
-	margin-top:150px;
-	height:700px;
-	background-color:white;
-	  margin-left:500px;
-    margin-right:400px;
-}
-.login-table{
-	margin-top:100px;
-	padding-left:550px;
-	
-}
-.register-ul{
-	float:right;
-}
+</head>
+
+<body class="bg">
+        <div class="header">
+
+
+                STOCK MARKET CHARTING  <img src="images/logo.png" id="logo">
+            
+            </div>
+
+        <ul class="ul"> 
+                <li class="li"><a href="uploadexceladmin.html" class="hyperlink">Import Data</a></li>
+                <li class="li"><a href="managecompanies.html" class="hyperlink">Manage Company</a></li>
+                <li class="li"><a href="https://www.google.com" class="hyperlink">ManageExchange</a></li>
+                <li class="li"><a href="https://www.google.com" class="hyperlink">Update IPO Details</a></li>
+                <li class="floatright-list"><a href="https://www.google.com" class="hyperlink">Logout</a></li>
+        </ul>
+        
+<div class="container-comparison">
+<h3 class="companylist">IPO LIST</h3>
+
+
+<%
+List ipoList=(List)request.getAttribute("ipoList");
+System.out.println(ipoList);
+%>
+<div class="manage">
+    <form>
+        <table cellspacing="10px" width="90%" border="1px">
+
+
+<tr>
+<th>ID<th>
+<th>COMPANY_CODE</th>
+<th>STOCK_EXCHANGE ID</th>
+<th>PRICE PER SHARE</th>
+<TH>TOTAL SHARES</TH>
+<TH>OPEN DATE</TH>
+<TH>REMARKS</TH>
+
+</tr>
+
+<% for(int i=0;i<ipoList.size();i++){
+	Ipo_planned e=(Ipo_planned)ipoList.get(i);
+	%>
+<tr>
+<td><%= e.getId()%><td>
+<td><%= e.getCompanyCode() %></td>
+<td><%= e.getStockExchange()%></td>
+<td><%= e.getPricePerShare() %></td>
+<td><%= e.getTotalShares() %></td>
+<td><%= e.getOpenDateTime() %></td>
+<td><%= e.getRemarks() %></td>
+</tr>
+<% }%>
+
+</table>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</table>
+
+</body>
+</html>
+

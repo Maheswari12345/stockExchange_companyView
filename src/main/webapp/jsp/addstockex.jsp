@@ -27,39 +27,50 @@
         
 </div>
 <div class="container-addcompany"> 
-<h3 class="addcompany-heading">Add Company</h3>
-<div class="addcompany">
-    <form:form method="POST" action="/addCompany"
-  modelAttribute="company">
-        <table cellspacing="10px" width="60%">
+<h3 class="addcompany-heading">Add StockExchange</h3>
+  <form:form method="POST" action="/addStockExchange" modelAttribute="stockList">
+        <table cellspacing="20" width="40%" align="center">
             <tr>
-             <td ><label for="company_name">Company Name</label></td>
+             <td ><label for="user_name">StockExchange Id</label></td>
             
-             <td ><form:input type="text" id="company_name" name="company_name" path="companyName"/></td>
+             <td ><form:input type="text" id="stock_id" name="stockexchange_id" path="stockExchangeId"/></td>
             </tr>
+            
+           
+           <tr>
+            <td ><label for="stock_name">StockExchange Name</label></td>
+            <td><form:select path="stockExchangeName" >
+                 <form:option value="">Select StockExchange</form:option>
+                        <form:options items="${stockExchangeName}" />
+                </form:select>
+
+            </td>
+           </tr>
+           
             <tr>
-            <td ><label for="ceo">CEO & Board Of Directors</label></td>
-            <td><form:input type="text" name="ceo" id="ceo" path="ceoName" /></td>
-           </tr>
-           <tr>
-            <td ><labe for="turnover">Turn Over</labe></td>
-            <td><form:input type="text" name="turnover" id="turnover" path="turnOver"/></td>
-           </tr>
-           <tr>
-            <td ><labe for="brief">Brief Description</labe></td>
-            <td><form:input type="text" name="brief" id="brief" path="briefWriteUp"/></td>
+            <td ><label for="brief">Brief Description</labe></td>
+            <td><form:input type="text" name="brief" id="brief" path="brief"/></td>
            
           </tr>
-         
+           <tr>
+                <td ><labe for="address">Address</labe></td>
+                <td><form:input type="text" name="address" id="address" path="address"/></td>
+               
+              </tr>
+              <tr>
+                    <td ><labe for="remarks">Remarks</labe></td>
+                    <td><form:input type="text" name="remarks" id="remarks" path="remarks"/></td>
+                   
+                  </tr>
+
         </table>
-   
+  
 </div>
-<div class="savebutton">
+<div class="user_register-button">
         <input type="submit" value="save" name="ok" width="30px" class="buttonconfirm">
         </div>  
     </div>
-     </form:form>
-    
+      </form:form>
     
 </body>
 </html>

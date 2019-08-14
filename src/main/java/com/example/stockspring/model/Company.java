@@ -1,6 +1,15 @@
 package com.example.stockspring.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.math.BigDecimal;
+
+@Entity
 public class Company {
+	
+	@Id
+	@Column(name="company_code")
 	private int companyCode;
 	public int getCompanyCode() {
 		return companyCode;
@@ -8,24 +17,30 @@ public class Company {
 	public void setCompanyCode(int companyCode) {
 		this.companyCode = companyCode;
 	}
+	@Column(name="company_Name")
 	private String companyName;
-	private double turnOver;
+	
+	@Column(name="turnover")
+	private BigDecimal turnOver;
+	@Column(name="ceo")
 	private String ceoName;
+	@Column(name="boardofdirectors")
 	private String directorsName;
 	//private List<StockExchange> stockExchange;
-	private int sectorId;
+
+	@Column(name="breifwriteup")
 	private String briefWriteUp;
-	private int stockCode;
+	
 	public String getCompanyName() {
 		return companyName;
 	}
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-	public double getTurnOver() {
+	public BigDecimal getTurnOver() {
 		return turnOver;
 	}
-	public void setTurnOver(double turnOver) {
+	public void setTurnOver(BigDecimal turnOver) {
 		this.turnOver = turnOver;
 	}
 	public String getCeoName() {
@@ -46,28 +61,18 @@ public class Company {
 	public void setStockExchange(List<StockExchange> stockExchange) {
 		this.stockExchange = stockExchange;
 	}*/
-	public int getSectorId() {
-		return sectorId;
-	}
-	public void setSector(int sectorId) {
-		this.sectorId = sectorId;
-	}
+	
 	public String getBriefWriteUp() {
 		return briefWriteUp;
 	}
 	public void setBriefWriteUp(String briefWriteUp) {
 		this.briefWriteUp = briefWriteUp;
 	}
-	public int getStockCode() {
-		return stockCode;
-	}
-	public void setStockCode(int stockCode) {
-		this.stockCode = stockCode;
-	}
+
 	@Override
 	public String toString() {
 		return "Company [companyCode=" + companyCode + ", companyName=" + companyName + ", turnOver=" + turnOver
-				+ ", ceoName=" + ceoName + ", directorsName=" + directorsName + ", sectorId=" + sectorId
-				+ ", briefWriteUp=" + briefWriteUp + ", stockCode=" + stockCode + "]";
+				+ ", ceoName=" + ceoName + ", directorsName=" + directorsName + ", sectorId=" 
+				+ ", briefWriteUp=" + briefWriteUp + ", stockCode=" +  "]";
 	}
 }

@@ -1,4 +1,4 @@
-package com.example.stockspring.dao;
+/*package com.example.stockspring.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -79,3 +79,4 @@ public class CompanyDaoImpl implements CompanyDao{
 	
 
 }
+*/

@@ -6,7 +6,7 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>Add New company</title>
+    <title>Add IPO Details</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -29,27 +29,44 @@
 <div class="container-addcompany"> 
 <h3 class="addcompany-heading">Add Company</h3>
 <div class="addcompany">
-    <form:form method="POST" action="/addCompany"
-  modelAttribute="company">
+    <form:form method="POST" action="/addIpo"
+  modelAttribute="ipoList">
         <table cellspacing="10px" width="60%">
             <tr>
-             <td ><label for="company_name">Company Name</label></td>
+             <td ><label for="id">ID</label></td>
             
-             <td ><form:input type="text" id="company_name" name="company_name" path="companyName"/></td>
+             <td ><form:input type="text" id="id" name="id" path="id"/></td>
             </tr>
             <tr>
-            <td ><label for="ceo">CEO & Board Of Directors</label></td>
-            <td><form:input type="text" name="ceo" id="ceo" path="ceoName" /></td>
+            <td ><label for="company_code">Company Code</label></td>
+            <td><form:input type="text" name="company_code" id="company_code" path="companyCode" /></td>
            </tr>
            <tr>
-            <td ><labe for="turnover">Turn Over</labe></td>
-            <td><form:input type="text" name="turnover" id="turnover" path="turnOver"/></td>
+            <td ><labe for="stock_exchange">Stock_Exchange</labe></td>
+            <td><form:input type="text" name="stock_exchange" id="stock_exchange" path="stockExchange"/></td>
            </tr>
            <tr>
-            <td ><labe for="brief">Brief Description</labe></td>
-            <td><form:input type="text" name="brief" id="brief" path="briefWriteUp"/></td>
+            <td ><labe for="price_share">Price Per Share</labe></td>
+            <td><form:input type="text" name="price_share" id="price_share" path="pricePerShare"/></td>
            
           </tr>
+          <tr>
+            <td ><labe for="total_share">Total Shares</labe></td>
+            <td><form:input type="text" name="total_share" id="total_share" path="totalShares"/></td>
+           
+          </tr>
+          <tr>
+            <td ><labe for="date">Date</labe></td>
+            <td><form:input type="date" name="date" id="date" path="openDateTime"/></td>
+           
+          </tr>
+          <tr>
+            <td ><labe for="remarks">Remarks</labe></td>
+            <td><form:input type="text" name="remarks" id="remarks" path="remarks"/></td>
+           
+          </tr>
+         
+         
          
         </table>
    

@@ -11,7 +11,7 @@
         <div class="header">
 
 
-                STOCK MARKET CHARTING  <img src="Images/logo.png" id="logo">
+                STOCK MARKET CHARTING  <img src="images/logo.png" id="logo">
             
             </div>
         <ul class="ul"> 
