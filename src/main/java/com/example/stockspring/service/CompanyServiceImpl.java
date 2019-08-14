@@ -19,9 +19,14 @@ public class CompanyServiceImpl implements CompanyService {
 	
 	@Override
 	public Company insertCompany(Company company) throws SQLException {
-		// TODO Auto-generated method stub
+		 try {
+			companyDao.insert(company);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
-	}
+	} 
 
 	@Override
 	public Company updateCompany(Company company) {

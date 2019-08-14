@@ -23,8 +23,9 @@ public class CompanyDaoImpl implements CompanyDao{
 	public int insert(Company c) throws Exception {
 
 		Connection conn = connect();
+		System.out.println(c);
 		String insertQuery = "insert into company(company_code,company_Name,turnover,ceo,boardofdirectors,breifwriteup,stock_code) values (?,?,?,?,?,?,?)";
-
+       
 		PreparedStatement pstmt = conn.prepareStatement(insertQuery);
 		pstmt.setInt(1, c.getCompanyCode());
 
@@ -37,7 +38,7 @@ public class CompanyDaoImpl implements CompanyDao{
 		
 		int insertstatus = 0;
 		insertstatus = pstmt.executeUpdate();
-
+		System.out.println(insertstatus);
 		return insertstatus;
 
 	}

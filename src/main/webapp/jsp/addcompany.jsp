@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,38 +29,36 @@
 <div class="container-addcompany"> 
 <h3 class="addcompany-heading">Add Company</h3>
 <div class="addcompany">
-    <form>
+    <form:form method="POST" action="/addCompany"
+  modelAttribute="company">
         <table cellspacing="10px" width="60%">
             <tr>
              <td ><label for="company_name">Company Name</label></td>
             
-             <td ><input type="text" id="company_name" name="company_name"></td>
+             <td ><form:input type="text" id="company_name" name="company_name" path="companyName"/></td>
             </tr>
             <tr>
             <td ><label for="ceo">CEO & Board Of Directors</label></td>
-            <td><input type="text" name="ceo" id="ceo"></td>
+            <td><form:input type="text" name="ceo" id="ceo" path="ceoName" /></td>
            </tr>
            <tr>
             <td ><labe for="turnover">Turn Over</labe></td>
-            <td><input type="text" name="turnover" id="turnover"></td>
+            <td><form:input type="text" name="turnover" id="turnover" path="turnOver"/></td>
            </tr>
            <tr>
             <td ><labe for="brief">Brief Description</labe></td>
-            <td><input type="text" name="brief" id="brief"></td>
+            <td><form:input type="text" name="brief" id="brief" path="briefWriteUp"/></td>
            
           </tr>
-          <tr>
-                <td ><labe for="date">IPO Date</labe></td>
-                <td><input type="date" name="date" id="date"></td>
-               
-              </tr>
+         
         </table>
-    </form>
+   
 </div>
 <div class="savebutton">
-        <input type="button" value="save" name="ok" width="30px" class="buttonconfirm">
+        <input type="submit" value="save" name="ok" width="30px" class="buttonconfirm">
         </div>  
     </div>
+     </form:form>
     
     
 </body>
